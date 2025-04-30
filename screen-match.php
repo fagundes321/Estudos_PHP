@@ -3,12 +3,13 @@
 echo "Bem-vindo(a) ao screen match!!
 ";
 
-$nomeFilme = "Top Gun - Maverick";
-$nomeFilme = "Thor: Ragnarok";
-$nomeFilme = "Watchmen";
+$nomeFilme = "Top Gun - Maverick\n";
+$nomeFilme = "Se beber não case\n";
+$nomeFilme = "Thor: Ragnarok\n";
 
 $anoLancamento = $argv[1] ?? 2022;
-$notaFilme = (8.8 + 5 + 4)/3;
+$notaFilme = number_format((8.8 + 5 + 4)/3, 2);
+// $formatoNota = number_format($nomeFilme, 2);
 $planoPrime = true;
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020 ;
 
@@ -25,7 +26,11 @@ if ($anoLancamento > 2022) {
 }
 
 $genero = match ($nomeFilme) {
-    "Top Gun - Maverick" => "ação",
-    "Thor: Ragnarok" => "super-herói",
-    "Se beber não case" => "comédia",
+    "Top Gun - Maverick\n" => "ação",
+    "Thor: Ragnarok\n" => "super-herói",
+    "Se beber não case\n" => "comédia",
+    default => "Genêro desconhecido",
+
 };
+
+echo "O gênero do filme é: $genero \n";
