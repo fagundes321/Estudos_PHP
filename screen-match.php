@@ -4,8 +4,8 @@ echo "Bem-vindo(a) ao screen match!!
 ";
 
 $nomeFilme = "Top Gun - Maverick\n";
-$nomeFilme = "Se beber não case\n";
-$nomeFilme = "Thor: Ragnarok\n";
+// $nomeFilme = "Se beber não case\n";
+// $nomeFilme = "Thor: Ragnarok\n";
 
 $anoLancamento = $argv[1] ?? 2022;
 $notaFilme = number_format((8.8 + 5 + 4)/3, 2);
@@ -27,8 +27,8 @@ if ($anoLancamento > 2022) {
 
 $genero = match ($nomeFilme) {
     "Top Gun - Maverick\n" => "ação",
-    "Thor: Ragnarok\n" => "super-herói",
-    "Se beber não case\n" => "comédia",
+    // "Thor: Ragnarok\n" => "super-herói",
+    // "Se beber não case\n" => "comédia",
     default => "Genêro desconhecido",
 
 };
