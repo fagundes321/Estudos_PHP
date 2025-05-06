@@ -1,7 +1,7 @@
 <?php
 $valor = 0;
 
-for ($i = 0; $i < 3; $i++) {
+for ($i = 0; $i < 0.3; $i++) {
     $valor += (float) readline("Digite um valor: ");
 }
 
