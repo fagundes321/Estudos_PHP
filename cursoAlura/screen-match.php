@@ -3,14 +3,28 @@
 echo "Bem-vindo(a) ao Screen Match!!\n";
 
 $nomeFilme = "Top Gun - Maverick\n";
-// $nomeFilme = "Se Beber Não Case\n";
-// $nomeFilme = "Thor: Ragnarok\n";
 
-$anoLancamento = $argv[1] ?? 2022;
-$notaFilme = number_format((8.8 + 5 + 4) / 3, 2);
-// $formatoNota = number_format($nomeFilme, 2);
+$anoLancamento = 2022;
+
+$quantidadeDeNotas = $argc -1;
+$notas = [];
+
+for ($contador = 1; $contador < $argc; $contador++) { 
+    $notas[] = (float) $argv[$contador];
+}
+
+$somasDeNotas = 0;
+foreach ($notas as $nota){ 
+    $somaDeNotas += $nota;
+}
+
+var_dump($notas);
+ 
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
 $planoPrime = true;
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
+
+
 
 echo "Nome do Filme: $nomeFilme";
 echo "Nota do Filme: $notaFilme\n";
