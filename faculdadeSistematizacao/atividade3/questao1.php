@@ -1,27 +1,21 @@
 <?php
 $maiorNota = 0;
-$contador = 0;
-$nota = 0;
 $somaNotas = 0;
+$quantidadeNotas = 3;
 
-while ($contador < 3) {
-    // $nota = $argv[1] ?? 0;
-    $nota = 10;
-    $somaNotas = $somaNotas + $nota;
+for ($i = 1; $i <= $quantidadeNotas; $i++) {
+    // Substitua a linha abaixo por: (float) readline("Digite a $iª nota: ") se quiser entrada real
+    $nota = 10; // Valor fixo apenas para exemplo
 
-    $contador +=1;
+    $somaNotas += $nota;
 
-    if ($contador == 1) {
+    if ($i == 1 || $nota > $maiorNota) {
         $maiorNota = $nota;
-    } else {
-        if ($nota > $maiorNota) {
-            $maiorNota = $nota;
-        }
     }
-    
 }
 
-$media = $somaNotas / $contador;
+$media = $somaNotas / $quantidadeNotas;
 
-echo "A média de notas é $media\n";
-echo "A maior nota foi $maiorNota\n";
+echo "A média de notas é: " . number_format($media, 2, ',', '.') . PHP_EOL;
+echo "A maior nota foi: " . number_format($maiorNota, 2, ',', '.') . PHP_EOL;
+?>
