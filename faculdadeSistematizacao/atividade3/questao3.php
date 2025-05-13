@@ -1,24 +1,40 @@
 <?php
-$sexo  = "";
-$idade = 0;
+
 $qtdMulheres = 0;
-$valorIdade = 0;
+$somaIdades = 0;
 
 for ($i = 0; $i < 3; $i++) {
-    $sexo = readline("Digite o sexo (M para mulher ou H para homem): ");
+    // Solicita e normaliza o sexo
+    $sexo = strtoupper(trim(readline("Digite o sexo (M para mulher ou H para homem): ")));
+
+    // Valida o sexo
+    while ($sexo !== 'M' && $sexo !== 'H') {
+        echo "Entrada inválida. Digite 'M' para mulher ou 'H' para homem.\n";
+        $sexo = strtoupper(trim(readline("Digite o sexo (M para mulher ou H para homem): ")));
+    }
+
+    // Solicita a idade
     $idade = (int)readline("Digite a idade: ");
 
-    if ($sexo == "M") {
-        $qtdMulheres += 1;
-        $valorIdade += $idade;
+    // Valida a idade
+    while ($idade <= 0) {
+        echo "Idade inválida. Digite um número positivo.\n";
+        $idade = (int)readline("Digite a idade: ");
+    }
+
+    // Se for mulher, acumula os dados
+    if ($sexo === 'M') {
+        $qtdMulheres++;
+        $somaIdades += $idade;
     }
 }
 
-echo "A quantidade de mulheres é $qtdMulheres\n";
+// Exibe resultados
+echo "\nQuantidade de mulheres: $qtdMulheres\n";
 
 if ($qtdMulheres > 0) {
-    $mediaIdade = $valorIdade / $qtdMulheres;
-    echo "A média de idade das mulheres é $mediaIdade\n";
+    $mediaIdade = $somaIdades / $qtdMulheres;
+    echo "Média de idade das mulheres: " . number_format($mediaIdade, 2) . " anos\n";
 } else {
     echo "Nenhuma mulher foi cadastrada.\n";
 }
