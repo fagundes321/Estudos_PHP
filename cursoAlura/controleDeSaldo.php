@@ -39,15 +39,20 @@ while (!in_array($comando, [$consultar, $sacar, $depositar, $sair])) {
     }
 }
 
-if ($comando == $sacar && $sacar > $saldo) {
-
+while ($comando == $sacar ) {
+ if( $sacar > $saldo){
    echo "O valor é maior que o saldo";
 } else{
-    echo "Qual valor deseja sacar?\n";
+    echo "Quanto você deseja sacar?\n";
     $valor = readline("");
-    $acaoSacar = $saldo - $valor;
-    var_dump($saldo);
+    $saldo = $saldo - $valor;
 }
+}
+
+while ($comando == $sacar && $sacar > $saldo) {
+    # code...
+}
+echo $painel;
 
 
 
