@@ -8,7 +8,7 @@
 <body>
     <pre>
         <?php
-        
+        // estudo de orientação a Objeto
             require_once 'Caneta.php';
             $c1 = new Caneta("BIC", "Azul", 0.5);
             
