@@ -7,20 +7,21 @@ class Caneta
     private $ponta;
     private $tampada;
 
-    public function __construct($m, $c, $p) { //metodo construtor
-       $this->modelo = $m;
-       $this->cor = $c;
-       $this->ponta = $p;
-       $this->tampar();
-       
+    public function __construct($m, $c, $p)
+    { //metodo construtor
+        $this->modelo = $m;
+        $this->cor = $c;
+        $this->ponta = $p;
+        $this->tampar();
     }
-    
-       
-    public function tampar() {
+
+
+    public function tampar()
+    {
         $this->tampada = true;
     }
 
-    
+
 
     public function getModelo()
     {
@@ -30,7 +31,6 @@ class Caneta
     public function setModelo($m)
     {
         $this->modelo = $m;
-
     }
 
     public function getPonta()
@@ -40,6 +40,6 @@ class Caneta
 
     public  function setPonta($p)
     {
-       $this->ponta = $p;
+        $this->ponta = $p;
     }
 }
