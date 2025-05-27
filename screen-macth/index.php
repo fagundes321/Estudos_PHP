@@ -1,6 +1,6 @@
 <?php
 
-require  "funcoes.php";
+require __DIR__ . "/src/funcoes.php";
 
 echo "Bem-vindo(a) ao Screen Match!!\n";
 
@@ -36,7 +36,7 @@ $genero = match (trim($nomeFilme)) {
 
 echo "O gênero do filme é: $genero\n";
 
-$filme = criaFilme(nome : "Thor: Ragnarok", anoLancamento: 2021 ,nota: 7.8, genero: "super-herói");
+$filme = criaFilme(nome: "Thor: Ragnarok", anoLancamento: 2021, nota: 7.8, genero: "super-herói");
 
 
 echo $filme["ano"];
