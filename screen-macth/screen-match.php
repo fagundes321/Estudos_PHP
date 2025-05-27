@@ -1,11 +1,12 @@
 <?php
 
-require "funcoes.php";
+require  "funcoes.php";
 
 echo "Bem-vindo(a) ao Screen Match!!\n";
 
 $nomeFilme = "Top Gun - Maverick";
 $anoLancamento = 2022;
+$dados = '{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}';
 
 $quantidadeDeNotas = $argc - 1;
 $notas = [];
@@ -34,3 +35,22 @@ $genero = match (trim($nomeFilme)) {
 };
 
 echo "O gênero do filme é: $genero\n";
+
+$filme = [
+    "nome" => "Thor: Ragnarok",
+    "ano" => 2021,
+    "nota" => 7.8,
+    "genero" => "super-herói",
+];
+
+echo $filme["ano"];
+
+// transforma o objeto json em um array
+var_dump(json_decode($dados, true));
+echo "\n";
+
+// transforma o array em um objeto json
+$filmeComoStringJson = json_encode($filme);
+
+// cria um arquivo json com as informações do array
+file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
