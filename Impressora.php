@@ -1,5 +1,4 @@
-<?php
-// class Impressora{
+<!-- // class Impressora{
 //     public $tinta;
 //     public $papel;
 //     public $ligado;
