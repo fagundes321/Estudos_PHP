@@ -20,7 +20,19 @@ function criaFilme(string $nome, int $anoLancamento, float $nota, string $genero
     $filme ->  nome = $nome;
     $filme ->  anoLancamento = $anoLancamento;
     $filme ->  genero = $genero;
-    $filme ->  nota = $nota;
+    $filme ->  notas = $notas;
 
     return $filme;
+}
+
+function pessoa(string $nome, int $idade, string $estadoCivil, string $nomeMae, string $nomePai) : Pessoa 
+{
+    $pessoa = new Pessoa();
+    $pessoa -> nome = $nome;
+    $pessoa -> idade = $idade;
+    $pessoa -> estadoCivil = $estadoCivil;
+    $pessoa -> nomeMae = $nomeMae;
+    $pessoa -> nomePai = $nomePai;
+
+    return $pessoa;
 }
