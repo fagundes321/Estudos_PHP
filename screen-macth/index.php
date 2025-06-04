@@ -1,12 +1,13 @@
 <?php
 
+require __DIR__ . "/src/Modelo/Filme.php";
 require __DIR__ . "/src/funcoes.php";
 
-echo "Bem-vindo(a) ao Screen Match!!\n";
+echo "Bem-vindo(a) ao screen match!\n";
 
 $nomeFilme = "Top Gun - Maverick";
+
 $anoLancamento = 2022;
-$dados = '{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}';
 
 $quantidadeDeNotas = $argc - 1;
 $notas = [];
@@ -15,38 +16,46 @@ for ($contador = 1; $contador < $argc; $contador++) {
     $notas[] = (float) $argv[$contador];
 }
 
-$somaDeNotas = array_sum($notas);
-$notaFilme = $quantidadeDeNotas > 0 ? $somaDeNotas / $quantidadeDeNotas : 0;
-
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
 $planoPrime = true;
-$incluidoNoPlano = incluiNoPlano($planoPrime, $anoLancamento);
+
+$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
+
+echo "Nome do filme: " . $nomeFilme . "\n";
+echo "Nota do filme: $notaFilme\n";
+echo "Ano de lançamento: $anoLancamento\n";
 
 exibeMensagemLancamento($anoLancamento);
 
-echo "Nome do Filme: $nomeFilme\n";
-echo "Nota do Filme: $notaFilme\n";
-echo "Ano de Lançamento: $anoLancamento\n";
-
-$genero = match (trim($nomeFilme)) {
-    "Top Gun - Maverick" => "Ação",
-    "Thor: Ragnarok" => "Super-herói",
-    "Se Beber Não Case" => "Comédia",
-    default => "Gênero desconhecido",
+$genero = match ($nomeFilme) {
+    "Top Gun - Maverick" => "ação",
+    "Thor: Ragnarok" => "super-herói",
+    "Se beber não case" => "comédia",
+    default => "gênero desconhecido",
 };
 
 echo "O gênero do filme é: $genero\n";
 
-$filme = criaFilme(nome: "Thor: Ragnarok", anoLancamento: 2021, nota: 7.8, genero: "super-herói");
+$filme = criaFilme(
+    nota: 7.8,
+    genero: "super-herói",
+    anoLancamento: 2021,
+    nome: "Thor: Ragnarok",
+);
 
+echo $filme->anoLancamento;
 
-echo $filme["ano"];
+var_dump($notas);
+sort($notas);
+var_dump($notas);
+$menorNota = min($notas);
+var_dump($menorNota);
 
-// transforma o objeto json em um array
-var_dump(json_decode($dados, true));
-echo "\n";
+var_dump($filme->nome);
+$posicaoDoisPontos = strpos($filme->nome, ':');
+var_dump($posicaoDoisPontos);
 
-// transforma o array em um objeto json
+var_dump(substr($filme->nome, 0, $posicaoDoisPontos));
+
 $filmeComoStringJson = json_encode($filme);
-
-// cria um arquivo json com as informações do array
 file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
