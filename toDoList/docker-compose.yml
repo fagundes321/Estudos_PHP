@@ -1,0 +1,9 @@
+services:
+  webserver:
+    container_name: estudos_php
+    build: .
+    ports:
+      - 8030:80
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
