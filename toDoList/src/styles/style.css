@@ -40,7 +40,7 @@ body {
 .to-do-form input {
     background-color: transparent;
     border: none;
-    color: blawhiteck;
+    color: black;
     font-size: 16px;
     width: 100%;
     padding: 4px;
@@ -91,6 +91,11 @@ body {
     margin-right: 10px;
 }
 
+.task .progress.done + .task-description {
+    text-decoration: line-through;
+    color: white;
+}
+
 .task .task-description {
     font-size: 16px;
     color: #fff;
@@ -116,7 +121,7 @@ body {
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 @media screen and (max-width: 600px){
