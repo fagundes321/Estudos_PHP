@@ -10,7 +10,7 @@ services:
       - ./:/var/www/html
     working_dir: /var/www/html
     ports:
-      - 661:80
+      - 663:80
     depends_on:
       - mysql-db
 
@@ -28,7 +28,7 @@ services:
     links:
       - mysql-db
     ports:
-      - "667:80"
+      - "664:80"
     environment:
       PMA_HOST: mysql-db
       MYSQL_ROOT_PASSWORD: password
