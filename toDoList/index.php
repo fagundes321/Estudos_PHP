@@ -7,21 +7,22 @@ $sql = $pdo->query("SELECT * FROM task");
 
 if ($sql->rowCount() > 0) {
     $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
-    
 }
 
-
-// echo '<pre>'; 
-// print_r($tasks); 
-// echo '</pre>';
-// exit;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- seu head -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
 </head>
+
 <body>
     <div id="to_do">
         <h1>Things to do</h1>
@@ -65,4 +66,5 @@ if ($sql->rowCount() > 0) {
     </div>
     <script src="src/javascript/script.js"></script>
 </body>
+
 </html>
