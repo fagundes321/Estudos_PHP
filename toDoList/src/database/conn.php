@@ -1,10 +1,10 @@
 <?php
 
-$hostname = '127.0.0.1';
+$hostname = '3306';
 $port     = '3306';
-$database = 'to_do_list_db';
-$username = 'root';
-$password = '' ;
+$database = 'test_database';
+$username = 'db_user';
+$password = 'password' ;
 
 try {
     $pdo = new PDO("mysql:host=$hostname;port=$port;dbname=$database", $username, $password);
