@@ -34,6 +34,7 @@ if ($sql->rowCount() > 0) {
         </form>
 
         <div id="tasks">
+            
             <?php foreach ($tasks as $task): ?>
                 <div class="task">
                     <input
