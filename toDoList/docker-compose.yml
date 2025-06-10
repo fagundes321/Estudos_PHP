@@ -1,6 +1,6 @@
 services:
   webserver:
-    container_name: estudos_php
+    container_name: to_do_list
     build: .
     ports:
       - 8030:80

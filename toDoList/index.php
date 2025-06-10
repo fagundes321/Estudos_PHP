@@ -1,13 +1,15 @@
 <?php
-require_once('src/db/conn.php');
+require_once('src/database/conn.php');
 
 $tasks = [];
 
-$sql = $pdo->query("SELECT * FROM tasks");
+$sql = $pdo->query("SELECT * FROM task");
 
 if ($sql->rowCount() > 0) {
     $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
+    
 }
+
 
 // echo '<pre>'; 
 // print_r($tasks); 
