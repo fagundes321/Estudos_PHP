@@ -44,14 +44,14 @@ if ($sql->rowCount() > 0) {
                         <i class="fa-regular fa-trash-can"></i>
                     </a>
                 </div>
-
+<!-- 
                 <form action="src/actions/update.php" method="POST" class="to-do-form edit-task hidden">
                     <input type="text" class="hidden" name="id" value=" ?>">
                     <input type="text" name="description" placeholder="Edit your task here" value="">
                     <button type="submit" class="form-button confirm-button">
                         <i class="fa-solid fa-check"></i>
                     </button>
-                </form>
+                </form> -->
             </div>
         </div>
     </div>

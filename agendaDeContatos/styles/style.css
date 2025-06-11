@@ -38,7 +38,8 @@ body {
 
 #contatos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 12px;
     max-height: 400px;
     overflow: auto;
