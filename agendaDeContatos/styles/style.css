@@ -43,4 +43,24 @@ body {
     gap: 12px;
     max-height: 400px;
     overflow: auto;
+    justify-content: center;
+}
+
+.contatos {
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid black;
+   padding: 8px 12px;
+   justify-content: space-between;
+   gap: 10px;
+}
+
+.categorias{
+     background-color: rgb(228 240 245);
+     color: red;
+}
+
+#agenda thead {
+ background-color: rgb(228 240 245);
+     color: red;
 }

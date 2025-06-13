@@ -30,29 +30,30 @@ if ($sql->rowCount() > 0) {
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
-
+     
         <div id="contatos">
-            <div class="contatos">
-                <p class="task-description">teste</p>
+               <thead class="categorias" >
+            <tr>
+            <th scope="col">Person</th>
+            <th scope="col">Most interest in</th>
+            <th scope="col">Age</th>
+            </tr>
+        </thead>
+            <?php // foreach ($agenda as $contatos)?>
+                <div class="contatos">
+                    <p class="task-description">tessafasfasfasfasfaste</p>
 
-                <div class="task-actions">
-                    <a class="action-button edit-button">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                    </a>
+                    <div class="task-actions">
+                        <a class="action-button edit-button">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
 
-                    <a href="src/actions/delete.php?id=" class="action-button delete-button">
-                        <i class="fa-regular fa-trash-can"></i>
-                    </a>
+                        <a href="src/actions/delete.php?id=" class="action-button delete-button">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+                    </div>
                 </div>
-<!-- 
-                <form action="src/actions/update.php" method="POST" class="to-do-form edit-task hidden">
-                    <input type="text" class="hidden" name="id" value=" ?>">
-                    <input type="text" name="description" placeholder="Edit your task here" value="">
-                    <button type="submit" class="form-button confirm-button">
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                </form> -->
-            </div>
+            <?php // endforeach ?>
         </div>
     </div>
 </body>
