@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-*{
+* {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: black;    
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
 
 #agenda {
@@ -20,47 +20,136 @@ body {
     flex-direction: column;
     gap: 25px;
     background-color: white;
-    padding: 18px;
-    border-radius: 8px;
-    width: 430px;
+    padding: 24px;
+    border-radius: 12px;
+    width: 460px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 #agenda h1 {
-    color: black;
-    font-size: 28px;
+    color: #1f1f1f;
+    font-size: 26px;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
 }
 
 #agenda form {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.search-input {
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 240px;
+    transition: 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px #007bffaa;
+}
+
+form button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form a {
+        background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form a:hover {
+    background-color: #0056b3;
 }
 
 #contatos {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    gap: 14px;
     max-height: 400px;
-    overflow: auto;
-    justify-content: center;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Scrollbar estilizada */
+#contatos::-webkit-scrollbar {
+    width: 6px;
+}
+
+#contatos::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
 }
 
 .contatos {
-    display: flex;
+    background-color: #f8f9fa;
+    padding: 12px 16px;
     border-radius: 10px;
-    border: 1px solid black;
-   padding: 8px 12px;
-   justify-content: space-between;
-   gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 5px solid #007bff;
+    position: relative;
 }
 
-.categorias{
-     background-color: rgb(228 240 245);
-     color: red;
+.task-description {
+    color: #333;
+    font-size: 15px;
+}
+
+.task-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    color: #555;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.action-button:hover {
+    color: #007bff;
+}
+
+/* Tabela de categorias (mantida) */
+.categorias {
+    background-color: rgb(228 240 245);
+    color: red;
 }
 
 #agenda thead {
- background-color: rgb(228 240 245);
-     color: red;
+    background-color: rgb(228 240 245);
+    color: red;
+}
+
+.telefone {
+    display: flex;
+    gap: 6px;
 }

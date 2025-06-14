@@ -1,5 +1,5 @@
 <?php
-require_once('database/conn.php');
+require_once('routes/rotas.php');
 
 $agenda = [];
 
@@ -8,6 +8,7 @@ $sql = $pdo->query("SELECT * FROM agenda ORDER BY id ASC");
 if ($sql->rowCount() > 0) {
     $agenda = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -29,32 +30,34 @@ if ($sql->rowCount() > 0) {
             <button type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
+            
+             <a href="pages/adicionar.php" type="submit">
+                 <i class="fa-solid fa-plus"></i>
+            </a>
+            
         </form>
-     
-        <div id="contatos">
-               <thead class="categorias" >
-            <tr>
-            <th scope="col">Person</th>
-            <th scope="col">Most interest in</th>
-            <th scope="col">Age</th>
-            </tr>
         </thead>
-            <?php // foreach ($agenda as $contatos)?>
-                <div class="contatos">
-                    <p class="task-description">tessafasfasfasfasfaste</p>
 
-                    <div class="task-actions">
-                        <a class="action-button edit-button">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                        </a>
-
-                        <a href="src/actions/delete.php?id=" class="action-button delete-button">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>
-                    </div>
+        <?php foreach ($agenda as $contatos): ?>
+            
+            <div class="contatos">
+                <p class="task-description"><?= $contatos['nome'] ?></p>
+                <div class="telefone">
+                    <p class="task-description">(<?= $contatos['ddd'] ?>)</p>
+                    <p class="task-description"><?= $contatos['numero'] ?></p>
                 </div>
-            <?php // endforeach ?>
-        </div>
+                <div class="task-actions">
+                    <a class="action-button edit-button">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                    <a href="src/actions/delete.php?id=" class="action-button delete-button">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </a>
+                </div>
+            </div>
+
+        <?php endforeach ?>
+
     </div>
 </body>
 
