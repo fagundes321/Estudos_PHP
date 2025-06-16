@@ -28,7 +28,7 @@ services:
     links:
       - mysql-db
     ports:
-      - "667:80"
+      - "662:80"
     environment:
       PMA_HOST: mysql-db
       MYSQL_ROOT_PASSWORD: password

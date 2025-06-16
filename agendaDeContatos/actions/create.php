@@ -13,11 +13,13 @@ if ($nome && $ddd && $numero) {
     $sql->bindValue(':numero', $numero);
     $sql->execute();
 
-   header('Location: ../');
+  header('Location: /../pages/adicionar.php');
 exit;
 
-} else {
-   header('Location: ../');
-exit;
 
-}
+} // else {
+//    header('Location: http://localhost:661/pages/adicionar.php');
+// exit;
+
+
+// }

@@ -1,13 +1,6 @@
 <?php
 require_once('routes/rotas.php');
 
-$agenda = [];
-
-$sql = $pdo->query("SELECT * FROM agenda ORDER BY id ASC");
-
-if ($sql->rowCount() > 0) {
-    $agenda = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
 
 ?>
 
@@ -25,21 +18,21 @@ if ($sql->rowCount() > 0) {
 <body>
     <div id="agenda">
         <h1>Agenda</h1>
-        <form action="">
-            <input type="search" value="" placeholder="Pesquise" class="search-input" style="width: 240px;">
+        <form onsubmit="searchData(event)">
+            <input type="search" value="" placeholder="Pesquisar" class="search-input" style="width: 240px;" id="pesquisar">
             <button type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            
-             <a href="pages/adicionar.php" type="submit">
-                 <i class="fa-solid fa-plus"></i>
+
+            <a href="pages/adicionar.php">
+                <i class="fa-solid fa-plus"></i>
             </a>
-            
         </form>
+
         </thead>
 
         <?php foreach ($agenda as $contatos): ?>
-            
+
             <div class="contatos">
                 <p class="task-description"><?= $contatos['nome'] ?></p>
                 <div class="telefone">
@@ -50,7 +43,8 @@ if ($sql->rowCount() > 0) {
                     <a class="action-button edit-button">
                         <i class="fa-regular fa-pen-to-square"></i>
                     </a>
-                    <a href="src/actions/delete.php?id=" class="action-button delete-button">
+
+                    <a href="actions/delete.php?id=<?= $contatos['id'] ?>" class="action-button delete-button">
                         <i class="fa-regular fa-trash-can"></i>
                     </a>
                 </div>
@@ -60,5 +54,6 @@ if ($sql->rowCount() > 0) {
 
     </div>
 </body>
+<script src="src/scripts/js/search.js"></script>
 
 </html>
